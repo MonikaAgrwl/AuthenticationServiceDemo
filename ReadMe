@@ -1,0 +1,37 @@
+API Specifications
+
+Rest API
+Description
+Authentication API
+(Endpoint url: /api/login)
+(HTTP POST)
+This API authenticates user on the basis of username and password.
+Client provides username and password in the request (json format)
+It does null/blank validation on input fields
+Registration API
+(Endpoint url: /api/signup)
+
+(HTTP POST)
+This API creates a new user account in database.
+Client provides name, email, username and password in the request (json format)
+This API checks if username and email provided in request already exist in database. If present, it will return response with message “user already exist
+It does null/blank and other validations on input fields
+User Lookup API
+(/Endpoint url: api/user/{id})
+(HTTP GET)
+This API fetches all user details against the provided user id in path variable
+It does validation on path variable
+
+
+Tools used
+
+Protocol: REST
+Language: Java
+Framework: Spring Boot (Added dependencies:  Spring Web, Spring JPA, Spring H2)
+Database: H2
+Testing: JUnit and Mockito
+
+
+
+
+![](/Users/monikaagrawal/Downloads/AuthenticationService (1).png)
