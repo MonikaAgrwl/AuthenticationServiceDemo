@@ -8,9 +8,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 class WebSecurityConfig {
 
-    //TODO Autowire password encoder
-
-    //TODO Implement JWT functionality
+    @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build();                                           
+    }
+    
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         //Added to disable cross site request forgery
